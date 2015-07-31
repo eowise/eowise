@@ -13,33 +13,33 @@
                 </div>
             </div>
             <div class="clearfix"></div>
-		    <div class="product-desc">
-		        <div>
-		        	<h3>{{ page.name }}</h3>
+		    <div class="ui grid container">
+		        <div class="ten wide column">
+		        	<h2 class="ui header">{{ page.name }}</h2>
 		            {{ content }}
 		        </div>
-		        <div>
+		        <div class="six wide middle aligned center aligned column">
 		            <a href="https://play.google.com/store/apps/details?id=com.eowise.cityevolution">
 		              <img alt="Get it on Google Play"
 		                   src="https://developer.android.com/images/brand/fr_generic_rgb_wo_60.png" />
 		            </a>
 		        </div>
 		    </div>
-		    <div class="row">
-		        <div class="small-12 columns">
-		            <h4>Overview</h4>
-		        </div>
+            <h3 class="ui header container">Overview</h3>
+		    <div class="ui cards container">
 		  		{% for feature in page.overview %}
-		  		<p>{{ feature.title }}</p>
-		        <p>{{ feature.text }}</p>
+                <div class="ui centered card">
+                    <div class="content">
+                		<p class="header">{{ feature.title }}</p>
+		        		<p class="description">{{ feature.text }}</p>
+                    </div>
+                </div>
 		        {% endfor %}
 		    </div>
-		    <div class="product-quotes">
-		        <div class="small-12 columns">
-		            <h4>Quotes</h4>
-		        </div>
+            <h3 class="ui header container">Quotes</h3>
+		    <div class="ui equal width grid container">
 		        {% for quote in page.quotes %}
-		        <p>{{ quote }}</p>
+		        <p class="text column">{{ quote }}</p>
 		        {% endfor %}
 		    </div>
         </div>

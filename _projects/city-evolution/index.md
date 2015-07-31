@@ -9,6 +9,8 @@ overview:
     text: This is the text
   - title: Test 2
     text: This is the other text
+  - title: Test 3
+    text: This is a last text
 quotes:
   - Really fun! Thanks for this great, simple, challenging game. Every time I play, I enjoy the brain cramp...
   - Interesting & unique take on the match 3 style game. Looks beautiful.
