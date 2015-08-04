@@ -13,7 +13,7 @@ collections:
 # Build settings
 markdown: kramdown
 permalink: /blog/:categories/:year/:month/:day/:title
-
+exclude: ["public"]
 # Sass settings
 sass:
     sass_dir: _assets
