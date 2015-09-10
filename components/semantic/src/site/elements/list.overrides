@@ -1,0 +1,13 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+.ui.padded.items > .item > .image,
+.ui.padded.items > .item > .content {
+  padding: @paddedItemPadding;
+}
+
+.ui[class*="very padded"].items > .item > .image,
+.ui[class*="very padded"].items > .item > .content {
+  padding: @veryPaddedItemPadding;
+}

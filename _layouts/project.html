@@ -3,45 +3,46 @@
     {% include head.html %}
     <body class="index">
         <div id="root">
-            {% include menu.html %}
-            <div id="header">
-                <div class="blurred">
-                    <div class="jumbo">
-                        <h1 class="heading">{{ page.heading }}</h1>
-                        <p class="sub-heading">{{ page.sub_heading }}</p>
-                    </div>
+            <div id="header" class="ui inverted basic blue segment">
+            	<div class="ui large inverted secondary menu">
+            		<div class="ui container">
+            			{% include menu.html %}
+            		</div>
                 </div>
             </div>
-            <div class="clearfix"></div>
-		    <div class="product-desc">
-		        <div>
-		        	<h3>{{ page.name }}</h3>
-		            {{ content }}
-		        </div>
-		        <div>
-		            <a href="https://play.google.com/store/apps/details?id=com.eowise.cityevolution">
-		              <img alt="Get it on Google Play"
-		                   src="https://developer.android.com/images/brand/fr_generic_rgb_wo_60.png" />
-		            </a>
-		        </div>
+            <div id ="description" class="ui very padded inverted basic blue segment">
+				<div class="ui grid container">
+			        <div class="ten wide large column">
+			        	<h1 class="ui inverted header container">{{ page.name }}<div class="sub header">{{ content }}</h1>
+			        </div>
+				</div>
+            </div>
+			<div class="ui center aligned basic segment container">
+		    	<a href="https://play.google.com/store/apps/details?id=com.eowise.cityevolution">
+					<img alt="Get it on Google Play" src="https://developer.android.com/images/brand/fr_generic_rgb_wo_60.png" />
+				</a>
 		    </div>
-		    <div class="row">
-		        <div class="small-12 columns">
-		            <h4>Overview</h4>
-		        </div>
-		  		{% for feature in page.overview %}
-		  		<p>{{ feature.title }}</p>
-		        <p>{{ feature.text }}</p>
-		        {% endfor %}
+		    <div id="overview" class="ui very padded basic secondary segment">
+		    	<h2 class="ui header container">Overview</h2>
+			    <div class="ui cards container">
+			  		{% for feature in page.overview %}
+	                <div class="ui centered card">
+	                    <div class="content">
+	                		<p class="header">{{ feature.title }}</p>
+			        		<p class="description">{{ feature.text }}</p>
+	                    </div>
+	                </div>
+			        {% endfor %}
+			    </div>
 		    </div>
-		    <div class="product-quotes">
-		        <div class="small-12 columns">
-		            <h4>Quotes</h4>
-		        </div>
-		        {% for quote in page.quotes %}
-		        <p>{{ quote }}</p>
-		        {% endfor %}
-		    </div>
+		    <div id="quotes" class="ui very padded inverted basic green segment">
+	            <h2 class="ui inverted header container">Quotes</h2>
+			    <div class="ui equal width grid container">
+			        {% for quote in page.quotes %}
+			        <p class="text column">{{ quote }}</p>
+			        {% endfor %}
+			    </div>
+			</div>
         </div>
         {% include footer.html %}
     </body>

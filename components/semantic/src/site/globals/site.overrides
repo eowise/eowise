@@ -1,0 +1,18 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+// Pygments
+
+span.n,
+span.na {
+    color: lighten(@blue, 45);
+}
+
+span.nl {
+    color: lighten(@olive, 45);
+}
+
+span.s1 {
+    color: lighten(@purple, 45);
+}

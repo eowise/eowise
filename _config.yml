@@ -5,14 +5,40 @@ description: "Write an awesome description for your new site here. You can edit 
 url: "http://yourdomain.com"
 permalink: /blog/:year/:month/:day/:title
 
+projects:
+- City Evolution
+
+open-source:
+- gradle-blender
+- gradle-imagemagick
+- gradle-packer-plugin
+
 collections:
-  projects:
+  gradle-packer-plugin:
     output: true
+    permalink: /open-source/:collection/:name.html
+    shorter: 
+    - A Gradle plugin witch automatically packs textures for a [libgdx](https://libgdx.badlogicgames.com/) game
+    - bla bla bla
+    github: https://github.com/eowise/gradle-packer-plugin
+    version: 0.7.0
+  gradle-blender:
+    output: true
+    permalink: /open-source/:collection/:name.html
+    type: open-source
+    shorter:
+    github: https://github.com/eowise/gradle-blender
+  gradle-imagemagick:
+    output: true
+    permalink: /open-source/:collection/:name.html
+    type: open-source
+    shorter: Gradle tasks to easy integrate ImageMagick
+    github: https://github.com/eowise/gradle-imagemagick
+
+
+
 
 # Build settings
 markdown: kramdown
 permalink: /blog/:categories/:year/:month/:day/:title
-
-# Sass settings
-sass:
-    sass_dir: _assets
+exclude: ["components", "node_modules"]
