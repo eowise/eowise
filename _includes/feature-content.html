@@ -1,0 +1,22 @@
+        <div class="column">
+            <div class="feature">
+                <h1 class="header"><a href="/open-source/{{ include.project.label }}/{{ include.firstPage..title | slugify }}.html">{{ project.label }}</a></h1>
+                {% if include.project.shorter %}
+                <div class="description">
+                    {% for paragraph in include.project.shorter %}
+                    <p>{{ paragraph | markdownify }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="ui basic buttons">
+                    {% for page in include.pages %}
+                    <div class="ui button">
+                        <a href="/open-source/{{ include.project.label }}/{{ page.title | slugify }}.html">{{ page.title }}</a>
+                    </div>
+                    {% endfor %}
+                    {% if include.project.github %}
+                    <div class="ui button"><a href="{{ include.project.github }}"><i class="github icon"></i>Github</a></div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>

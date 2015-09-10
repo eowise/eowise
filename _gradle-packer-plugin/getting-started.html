@@ -1,0 +1,69 @@
+---
+layout: tabs
+title: Getting started
+project: gradle-packer-plugin
+order: 0
+nav:
+- Introduction
+- Install
+- Basic usage
+---
+{% assign project = site.collections[page.project] %}
+<a name="introduction"></a>
+<h3><span class="ui huge green ribbon label">Introduction</span></h3>
+<p>A Gradle plugin witch automatically packs texture for a libgdx game, using libgdx texture packer. Before packing, the plugin can do some actions on the resources provided, such as:</p>
+<ul>
+    <li>Resize images for variants</li>
+    <li>Convert SVG to PNG images</li>
+</ul>
+<a name="install"></a>
+<h3><span class="ui huge green ribbon label">Install</span></h3>
+<p>To apply the plugin, please add one of the following snippets to your build.gradle file:</p>
+
+<div class="ui tall inverted stacked grey segment">
+    <div class="ui top attached label">
+        <span class="violet right aligned detail"><div class="ui compact tiny violet label">Gradle >= 2.1</div></span>
+        build.gradle
+    </div>
+    {% highlight groovy %}
+plugins {
+    id "com.eowise.packer" version "{{ project.version }}"
+}
+    {% endhighlight %}
+</div>
+<div class="ui horizontal divider">Or</div>
+<div class="ui tall inverted stacked grey segment">
+    <div class="ui top attached label">
+        <span class="violet right aligned detail"><div class="ui compact tiny violet label">Gradle < 2.1</div></span>
+        build.gradle
+    </div>
+    {% highlight groovy %}
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.eowise:packer:{{ project.version }}'
+    }
+}
+apply plugin: 'packer'
+    {% endhighlight %}
+</div>
+<a name="basic-usage"></a>
+<h3><span class="ui huge green ribbon label">Basic usage</span></h3>
+<p>A very basic scenario :</p>
+<div class="ui tall inverted stacked grey segment">
+    {% highlight groovy %}
+task packs(type: com.eowise.packer.Packer) {
+  resourcesInputPath 'path/to/resources'
+  atlasesOutputPath 'path/to/atlases'
+}
+    {% endhighlight %}
+</div>
+<p>This task will do the folowing actions :</p>
+<ol>
+    <li>Convert all SVGs to PNGs in the 'path/to/resources' tree</li>
+    <li>Copy all PNGs do a working directory</li>
+    <li>Copy all file named 'pack.json' from the resouces path to the working directory</li>
+    <li>Call the libgdx texture packer to packs the textures from the working directory into the 'path/to/atlases' directory (generally android assets directory)</li>
+</ol>

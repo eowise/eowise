@@ -1,9 +1,0 @@
-{
-  "name": "web",
-  "version": "0.1.0",
-  "description": "",
-  "main": [],
-  "dependencies": {
-    "semantic-ui-less": "semantic-org/semantic-ui-less#~2.0.7"
-  }
-}

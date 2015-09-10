@@ -1,0 +1,8 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+.ui.cards > .card > .content > h2.header:not(.ui),
+.ui.card > .content > h2.header:not(.ui) {
+  font-size: @h2;
+}

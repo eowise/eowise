@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% assign project = site.collections[page.project] %}
+{% assign pages = project.docs | sort: "order" %}
+{% assign section = project.nav | where: "slug", page.id | first %}
+<html>
+    {% include head.html %}
+    
+    <body class="index">
+        <div id="root">
+            <div id="header" class="ui inverted basic blue segment">
+            	<div class="ui large inverted secondary menu">
+            		<div class="ui container">
+            			{% include menu.html %}
+            		</div>
+                </div>
+            </div>
+            <div id ="description" class="ui very padded inverted basic blue segment">
+                <h1 class="ui inverted header container">{{ project.label }}<div class="sub header">{{ project.shorter }}</div></h1>
+            </div>
+            <div class="ui basic segment">
+                <div class="ui text container">
+                    <div id="content" class="ui basic segment">
+                        <h2 class="ui header">{{ page.title }}</h2>
+                        {{ content }}
+                        <div class="ui right close dividing rail">
+                            <div class="ui secondary sticky vertical menu">
+                                {% for header in pages %}
+                                <a class="item" href="/open-source/{{ project.label }}/{{ header.title | slugify }}.html">{{ header.title }}</a>
+                                <div class="menu">
+                                    {% for item in header.nav %}
+                                    <a class="item" href="#{{ item | slugify }}">{{ item }}</a>
+                                    {% endfor %}
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include footer.html %}
+        <script type="text/javascript">
+            jQuery('.ui.sticky').sticky({context: '#content'});
+        </script>
+    </body>
+</html>

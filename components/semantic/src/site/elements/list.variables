@@ -1,0 +1,6 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@paddedItemPadding: 1.5em;
+@veryPaddedItemPadding: 3em;

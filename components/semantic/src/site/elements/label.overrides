@@ -1,0 +1,23 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.label .right.aligned.detail {
+    float: right;
+}
+
+.ui.label .blue.detail {
+    color: @blue;
+}
+
+.ui.label .red.detail {
+    color: @red;
+}
+
+.ui.label .violet.detail {
+    color: @violet;
+}
+
+.ui.compact.label {
+    padding: @verticalPadding / 3 @horizontalPadding / 2;
+}

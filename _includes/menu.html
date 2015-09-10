@@ -1,10 +1,8 @@
-
-<div class="ui fixed inverted menu">
-	<div class="ui container">
-		<a class="header item" href="/">Eowise</a>
-		{% for project in site.projects %}
-		<a class="item" href="{{ project.url }}">{{ project.name }}</a>
-		{% endfor %}
-		<a class="item" href="/blog/">Blog</a>
-	</div>
+<a class="header item" href="/">Eowise</a>
+<div class="right menu">
+    {% for project in site.projects %}
+    <a class="item" href="/projects/{{ project | slugify }}/">{{ project }}</a>
+    {% endfor %}
+    <a class="item" href="/open-source/">Open source</a>
+    <a class="item" href="/blog/">Blog</a>
 </div>

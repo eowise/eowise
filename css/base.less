@@ -1,19 +1,59 @@
 ---
 ---
 
-@import "public/components/semantic-ui-less/semantic.less";
+@mainColor: #487AAE;
+@hightlightColor: #56B68B;
+@softColor: #F7F5F3;
 
-
+#header,
+#description,
+#overview,
+#quotes {
+    margin: 0;
+}
 
 #header {
-    background: #4280c5;
+    background: @mainColor;
+    
+    .ui.large.menu .header.item {
+        border-right: none;
+    }
+    
 
-    padding: 100px 0;
+}
+
+.jumbo {
     
     .header {
         color: white;
     }
+    
+    .jumbo {
+        padding: 100px 0;
+    }
 }
 
-#page {
+pre, code {
+    margin: 0;
+}
+
+#tabs .ui.secondary.pointing.menu {
+    border-bottom: none;
+}
+
+.odd .feature {
+    padding-right: 3em;
+}
+
+.even .feature {
+    padding-left: 3em;
+}
+
+.feature {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    
+    p {
+        font-size: 1.3em;
+    }
 }

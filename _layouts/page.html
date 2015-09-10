@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body class="index">
+        <div id="root">
+            <div id="header" class="ui inverted basic blue segment">
+            	<div class="ui large inverted secondary menu">
+            		<div class="ui container">
+            			{% include menu.html %}
+            		</div>
+                </div>
+            </div>
+            <div id ="description" class="ui very padded inverted basic blue segment">
+                <h1 class="ui inverted header container">{{ page.name }}<div class="sub header">{{ page.shorter }}</h1>
+            </div>
+            {{ content }}
+        </div>
+        {% include footer.html %}
+    </body>
+</html>
